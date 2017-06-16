@@ -1,4 +1,4 @@
-module Name exposing (Model, Msg, update, view, subscriptions, init)
+module ButtonCounter exposing (Model, Msg, update, view, subscriptions, init)
 
 
 import Html exposing (..)
