@@ -1,4 +1,4 @@
-import Html exposing (Html, div, h1, text, button)
+import Html exposing (Html, div, h1, text, button, img)
 import Html.Events exposing (onClick)
 import Html.Attributes exposing (..)
 import Random exposing (..)
@@ -46,7 +46,9 @@ view : Model -> Html Msg
 view model =
     div [ style [("margin", "30px")]]
     [ h1 [] [ text ((toString model.die1) ++ " and " ++ (toString model.die2)) ]
-    , button [ onClick Roll ] [ text "Roll" ]
+    , img [ src ("../images/die_" ++ (toString model.die1) ++ ".png") ] []
+    , img [ src ("../images/die_" ++ (toString model.die2) ++ ".png") ] []
+    , div [] [ button [ onClick Roll ] [ text "Roll" ] ]
     ]
 
 
@@ -56,4 +58,4 @@ subscriptions model =
 
 init : (Model, Cmd Msg)
 init =
-    (Model -1 -1 False, Cmd.none)
+    (Model 6 6 False, Cmd.none)
